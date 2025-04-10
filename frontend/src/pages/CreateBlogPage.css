@@ -1,0 +1,13 @@
+.create-blog-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .create-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
