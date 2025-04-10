@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://192.168.1.37:5175")
 public class FeedbackController {
 
     @Autowired
@@ -22,5 +22,10 @@ public class FeedbackController {
     @GetMapping("/feedbacks")
     public List<Feedback> getAllFeedbacks() {
         return feedbackService.getAllFeedbacks();
+    }
+
+    @GetMapping("/error")
+    public String error() {
+        return "Error page";
     }
 }

@@ -11,7 +11,7 @@ public class Feedback {
     private int id;
 
     @Column(nullable = false, length = 100)
-    private String name;
+    private String username;
 
     @Column(nullable = false, length = 100)
     private String email;
@@ -25,7 +25,7 @@ public class Feedback {
     }
 
     public Feedback(String name, String email, String message) {
-        this.name = name;
+        this.username = name;
         this.email = email;
         this.message = message;
     }
@@ -39,11 +39,11 @@ public class Feedback {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.username = name;
     }
 
     public String getEmail() {
@@ -66,7 +66,7 @@ public class Feedback {
     public String toString() {
         return "Feedback{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", message='" + message + '\'' +
                 '}';
