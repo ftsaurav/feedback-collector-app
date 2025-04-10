@@ -8,12 +8,12 @@ export default defineConfig({
     proxy: {
       proxy: {
         '/feedback': {
-          target: 'http://localhost:8080',
+          target: 'http://192.168.1.33:8080',
           changeOrigin: true,
           secure: false,
         },
         '/feedbacks': {
-          target: 'http://localhost:8080',
+          target: 'http://192.168.1.33:8080',
           changeOrigin: true,
           secure: false,
         },
