@@ -47,7 +47,7 @@ const BlogForm = ({ onPost }) => {
         required
       />
 
-      <button type="submit" className="submit-btn">
+      <button type="submit" className="submit-btn" onClick={handleSubmit}>
         Post
       </button>
     </form>
