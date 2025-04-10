@@ -1,11 +1,15 @@
 import React from "react";
-import "./BlogList.css"; // Import the CSS file
+import "./BlogList.css";
 
 const BlogList = ({ blogs }) => {
+  if (!Array.isArray(blogs)) {
+    return <p className="blog-error">No blogs to display.</p>;
+  }
+
   return (
     <div className="blog-list">
       {blogs.map((blog) => (
-        <div key={blog._id} className="blog-card">
+        <div key={blog._id || blog.id} className="blog-card">
           <p className="blog-username">{blog.username}</p>
           <p className="blog-message">{blog.message}</p>
         </div>
