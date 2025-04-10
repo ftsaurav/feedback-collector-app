@@ -1,21 +1,22 @@
 package com.feedback.example.feedback.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "feedbacks")
 public class Feedback {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(nullable = false, length = 100)
     private String name;
 
+    @Column(nullable = false, length = 100)
     private String email;
 
+    @Column(columnDefinition = "TEXT")
     private String message;
 
     public Feedback()
