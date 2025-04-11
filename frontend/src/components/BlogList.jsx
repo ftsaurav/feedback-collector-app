@@ -10,7 +10,7 @@ const BlogList = ({ blogs }) => {
     <div className="blog-list">
       {blogs.map((blog) => (
         <div key={blog._id || blog.id} className="blog-card">
-          <p className="blog-username">{blog.username}</p>
+          <p className="blog-username">{blog.name}</p>
           <p className="blog-message">{blog.message}</p>
         </div>
       ))}
