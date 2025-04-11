@@ -4,15 +4,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true, // 👈 add this line
+    host: true,
     proxy: {
       '/feedback': {
-        target: 'http://192.168.1.33:8080',
+        target: 'http://localhost:8080', // use your Spring Boot local server
         changeOrigin: true,
         secure: false,
       },
       '/feedbacks': {
-        target: 'http://192.168.1.33:8080',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,
       },

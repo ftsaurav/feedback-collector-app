@@ -1,6 +1,16 @@
 import axios from "axios";
-const API1= "/feedback";
-const API2= "/feedbacks";
 
-export const getBlogs = () => axios.get(API2);
-export const createBlog = (data) => axios.post(API1, data);
+// Check if running in production (on Netlify)
+const isProduction = import.meta.env.PROD;
+
+// Directly use your AWS backend in production
+const baseURL = isProduction
+  ? 'http://43.204.233.223:8080' // 🔁 Replace this with your actual AWS backend URL
+  : ''; // Use Vite proxy for local dev
+
+const axiosInstance = axios.create({
+  baseURL,
+});
+
+export const getBlogs = () => axiosInstance.get("/feedbacks");
+export const createBlog = (data) => axiosInstance.post("/feedback", data);
